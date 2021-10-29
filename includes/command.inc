@@ -857,9 +857,9 @@ function drush_parse_args() {
       $command_args[] = $opt;
     }
     // Is the arg an option (starting with '-')?
-    if (!empty($opt) && $opt{0} == "-" && strlen($opt) != 1) {
+    if (!empty($opt) && $opt[0] == "-" && strlen($opt) != 1) {
       // Do we have multiple options behind one '-'?
-      if (strlen($opt) > 2 && $opt{1} != "-") {
+      if (strlen($opt) > 2 && $opt[1] != "-") {
         // Each char becomes a key of its own.
         for ($j = 1; $j < strlen($opt); $j++) {
           $opt_char = substr($opt, $j, 1);
